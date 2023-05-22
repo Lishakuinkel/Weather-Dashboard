@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.search-container{
+    padding-top: 5px;
+    padding-left: 5px;
+    
+}
+
+.top-heading{
+    margin: 0px;
+    padding: 1px;
+    text-align: center;
+    color: beige;
+    font-size: 15px;
+    background: rgb(56,60,186);
+    background: linear-gradient(270deg, rgba(56,60,186,0.5358974358974359) 20%, rgba(47,67,140,1) 100%);
+    
+}
+
+.form-control{
+    padding: 5px 30px;
+}
+
+#search-btn{
+    background-color: rgb(124, 136, 227);
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 5px 80px;
+}
