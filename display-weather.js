@@ -2,8 +2,10 @@ var apikey = "5f680b22221a07656a0b13bd681475c7";
 
 var cityInput = document.getElementById("city-input");
 var searchbtn = document.getElementById("search-btn");
+var previous_searches = document.getElementById("previous-searches");
+var searchList = document.getElementById(searchlist);
 
-var citysearches = [];
+var citySearches = [];
 
 
 
@@ -14,13 +16,8 @@ function getCoordinates() {
     let lat;
     let lon;
     
+    search_history();
     
-    var history = JSON.parse(localStorage.getItem("citysearches")) || [];
-    
-    history.push({"citysearches":"cityInput.value"});
-   
-
-    localStorage.setItem("citysearches", JSON.stringify(cityInput.value)); 
 
     
 
@@ -58,7 +55,23 @@ function displayWeather(lat,lon) {
 
 
 
+function search_history(){
+    citySearches = JSON.parse(localStorage.getItem("citysearches")) || [];
+    
+    citySearches.push(cityInput.value);
+   
 
+    localStorage.setItem("citysearches", JSON.stringify(citySearches)); 
+
+    for (i=0; i<citySearches.length;i++){
+        
+        var li=document.createElement('li');
+        li = citySearches[i];
+        console.log(li);
+        
+        searchList.appendChild(li);
+        }
+}
 
 
 
