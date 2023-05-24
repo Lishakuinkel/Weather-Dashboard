@@ -8,7 +8,7 @@
 
 
 .search-container{
-    padding-top: 5px;
+    padding-top: 25px;
     padding-left: 5px;
     
 }
@@ -36,11 +36,35 @@
     padding: 5px 70px;
 }
 
+#history-btn{
+    background-color: lightgray;
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 5px;
+    margin-bottom: 10px;
+    
+    
+    
+ }
+
+.history{
+    margin-top: 10px;
+    display: grid;
+    box-sizing: border-box;
+    width: 183px;
+    height: 200px;
+    
+    
+}
+
 .currentWeather{
     border-style: solid;
     border-color: grey;
-    margin-left: 200px;
-    margin-top: -80px;
+    box-sizing: border-box;
+    margin-left: 220px;
+    margin-top: -250px;
+    margin-right: 220px;
 
 }
 
@@ -51,13 +75,15 @@
 
 .cityName{
     padding:5px 30px;
+    display: grid;
+    
 }
 
 .fiveDay{
-    margin-top: 50px;
-    margin-left: 200px;
+    margin-top: 5px;
+    margin-left: 220px;
     padding-top: 10px;
-    width: 100%;
+    
     
     
     
@@ -71,4 +97,15 @@
     margin-right: 2%;
     padding:30px;
     
+}
+
+.previous_searches{
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 0;
+    
+}
+
+#searchlist{
+    list-style-type: none;
 }
