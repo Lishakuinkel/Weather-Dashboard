@@ -14,11 +14,12 @@ var citySearches = [];
 currentDate = new Date();
 displayDate.innerHTML = currentDate.toLocaleDateString("en-US");
 
-search_history();
+load_history();
 
 searchbtn.addEventListener('click', function () {
     getCoordinates();
     search_history();
+    load_history();
 });
 
 function getCoordinates() {
@@ -94,21 +95,27 @@ function search_history() {
 
     localStorage.setItem("citysearches", JSON.stringify(citySearches));
 
-    for (i = 0; i < citySearches.length; i++) {
+    
+}
 
+function load_history(){
+    citySearches = JSON.parse(localStorage.getItem("citysearches")) || [];
+
+    document.getElementById('history-container').innerHTML="";
+    
+    for (i = 0; i < citySearches.length; i++) {
+        console.log(citySearches[i]);
         var historyBtn = document.createElement("button");
         historyBtn.id = 'historybtn';
         historyBtn.textContent = citySearches[i];
-        document.body.appendChild(historyBtn);
+        document.getElementById('history-container').appendChild(historyBtn);
         
 
     }
 }
 
 
-
-
-
+historyBtn.addEventListener('click',getCoordinates);
 
 
 

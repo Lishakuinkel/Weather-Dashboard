@@ -46,7 +46,7 @@ body{
     border-color: rgb(48, 47, 48);
     box-sizing: border-box;
     margin-left: 260px;
-    margin-top: -100px;
+    margin-top: -260px;
     margin-right: 220px;
     padding-bottom: 30px;
     padding-top: 20px;
@@ -96,5 +96,15 @@ body{
     border: none;
     border-radius: 0.2rem;
     padding: 5px;
-    margin-bottom: 10px;
+    text-align: left;
+    
+}
+
+#history-container{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    margin-top:20px;
+    
+
 }
