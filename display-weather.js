@@ -8,30 +8,32 @@ var searchbtn = document.getElementById("search-btn");
 var cityName = document.getElementById("city");
 var displayDate = document.getElementById("date");
 
+var historyContainer = document.getElementById("history-container");
 
 var citySearches = [];
 
 currentDate = new Date();
 displayDate.innerHTML = currentDate.toLocaleDateString("en-US");
 
+var search;
+
 load_history();
 
 searchbtn.addEventListener('click', function () {
-    getCoordinates();
+    cityName.textContent = cityInput.value;
+    getCoordinates(cityInput.value);
     search_history();
     load_history();
 });
 
-function getCoordinates(event) {
+function getCoordinates(search) {
     //Fetch geo-coordinates api//   
     let lat;
     let lon;
+    
+    
 
- 
-
-    cityName.textContent = cityInput.value;
-
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityInput.value + "&limit=1&appid=" + apikey)
+    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=" + apikey)
         .then(function (response) {
             console.log("success");
             return response.json();
@@ -110,14 +112,24 @@ function load_history(){
         var historyBtn = document.createElement("button");
         historyBtn.id = 'historybtn';
         historyBtn.textContent = citySearches[i];
-        document.getElementById('history-container').appendChild(historyBtn);
+        historyContainer.appendChild(historyBtn);
         
-        historyBtn.addEventListener('click',getCoordinates);
+        historyContainer.addEventListener('click',handleSearchbutton);
     }
 }
 
 
-
+function handleSearchbutton(e){
+    if (!e.target.matches('#historybtn')) {
+        return;
+      }
+    
+      var btn = e.target;
+      console.log(btn.innerHTML);
+    
+      cityName.textContent = btn.innerHTML;
+      getCoordinates(btn.innerHTML); 
+    }
 
 
 

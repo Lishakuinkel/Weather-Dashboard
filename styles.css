@@ -45,11 +45,9 @@ body{
     border-style: solid;
     border-color: rgb(48, 47, 48);
     box-sizing: border-box;
-    margin-left: 260px;
-    margin-top: -260px;
-    margin-right: 220px;
-    padding-bottom: 30px;
-    padding-top: 20px;
+    width: 50%;
+    margin:auto;
+    
     
 }
 
@@ -65,10 +63,8 @@ body{
 }
 
 .fiveDay{
-    margin-top: 5px;
-    margin-left: 220px;
-    padding-top: 35px;
-    padding-left: 40px;
+    width: 60%;
+    margin: auto;
        
 }
 
