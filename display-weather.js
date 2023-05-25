@@ -78,17 +78,19 @@ function renderItems(data) {
 
         var temperature = data.list[n].main.temp;
 
-        document.getElementById("temp" + i + 1).innerHTML = Number(((temperature - 273.15) * 1.8) + 32).toFixed(2);
+        console.log("temp" + (i + 1));
 
-        document.getElementById("windspeed" + i + 1).innerHTML = Number(data.list[n].wind.speed).toFixed(2);
+        document.getElementById("temp" + (i + 1)).innerHTML = Number(((temperature - 273.15) * 1.8) + 32).toFixed(2);
 
-        document.getElementById("humid" + i + 1).innerHTML = Number(data.list[n].main.humidity).toFixed(2);
+        document.getElementById("windspeed" + (i + 1)).innerHTML = Number(data.list[n].wind.speed).toFixed(2);
 
-        document.getElementById("img" + i + 1).src = "https://openweathermap.org/img/wn/" + data.list[n].weather[0].icon + ".png";
+        document.getElementById("humid" + (i + 1)).innerHTML = Number(data.list[n].main.humidity).toFixed(2);
 
-        document.getElementById("date" + i + 1).innerHTML = data.list[n].dt_txt.slice(0, 10);
+        document.getElementById("img" + (i + 1)).src = "https://openweathermap.org/img/wn/" + data.list[n].weather[0].icon + ".png";
+
+        document.getElementById("date" + (i + 1)).innerHTML = data.list[n].dt_txt.slice(0, 10);
     }
-
+    
 }
 
 function search_history() {
