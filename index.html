@@ -24,14 +24,13 @@
                 <button id="search-btn" type="button" class="btn btn-outline-primary">Search</button>
                 
             </div>
-            <div id="history-container">
-
-            </div>
+            
     </div>
     <div class="col-sm-12 col-md-9 order-md-2">
         <div class="row">
 
             <!--------- Current Weather Forecast --------->
+        <div class="container">
             <div class="col-12 currentWeather p-0">
                 <div class="d-flex cityName">
                     <h2 id="city"> City name </h2>
@@ -44,7 +43,8 @@
                 <p class="pl-2">Humidity: <span id="humidity"></span>% </p>
                 
             </div>
-
+            <div id="history-container"></div>
+        </div>
             <!--------- 5 Day forecast ---------->
             <div class="col-12 fiveDay">
                 <h3>5 Day Forecast:</h3>
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-
+            
                     
                     <script src="display-weather.js"></script>
 </body>

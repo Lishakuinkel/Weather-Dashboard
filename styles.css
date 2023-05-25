@@ -36,18 +36,26 @@ body{
     color: white;
     border: none;
     border-radius: 0.2rem;
-    padding: 5px 70px;
+    padding: 10px 70px;
+
+    
 }
 
+.container{
+    flex-wrap: wrap;
+
+}
 
 .currentWeather{
 
     border-style: solid;
     border-color: rgb(48, 47, 48);
     box-sizing: border-box;
-    width: 60%;
+    width: 50%;
     height: 100%;
-    margin-left: 250px;    
+    margin: auto;
+    margin-top: -100px;
+
     
 }
 
@@ -65,7 +73,7 @@ body{
 .fiveDay{
     width: 100%;
     margin-left: 20%;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .fiveDay h3{
@@ -92,18 +100,17 @@ body{
     color: rgb(237, 234, 234);
     border: none;
     border-radius: 0.2rem;
-    padding: 5px;
     text-align: center;
     margin-bottom: 10px;
-    
+    padding: 10px;
 }
 
 #history-container{
+
     display: flex;
     flex-direction: column;
-    width: 180px;
-    margin-top:20px;
-
+    width: 15%;
+    margin-left: 20px;
     
 
 }
