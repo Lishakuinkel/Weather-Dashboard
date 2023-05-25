@@ -22,10 +22,12 @@ searchbtn.addEventListener('click', function () {
     load_history();
 });
 
-function getCoordinates() {
+function getCoordinates(event) {
     //Fetch geo-coordinates api//   
     let lat;
     let lon;
+
+ 
 
     cityName.textContent = cityInput.value;
 
@@ -110,12 +112,12 @@ function load_history(){
         historyBtn.textContent = citySearches[i];
         document.getElementById('history-container').appendChild(historyBtn);
         
-
+        historyBtn.addEventListener('click',getCoordinates);
     }
 }
 
 
-historyBtn.addEventListener('click',getCoordinates);
+
 
 
 
