@@ -1,5 +1,4 @@
 
-
 var apikey = "5f680b22221a07656a0b13bd681475c7";
 
 var cityInput = document.getElementById("city-input");
@@ -27,11 +26,9 @@ searchbtn.addEventListener('click', function () {
 });
 
 function getCoordinates(search) {
-    //Fetch geo-coordinates api//   
+    //Fetch geo-coordinates api for lat and lon values according to city name 
     let lat;
     let lon;
-
-
 
     fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=" + apikey)
         .then(function (response) {
@@ -48,6 +45,7 @@ function getCoordinates(search) {
 }
 
 function fetchWeather(lat, lon) {
+    //fetch openweather api for weather conditions
 
     fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apikey)
         .then(function (response) {
@@ -72,6 +70,8 @@ function renderItems(data) {
     document.getElementById("wind").innerHTML = Number(data.list[0].wind.speed).toFixed(2);
 
     document.getElementById("humidity").innerHTML = Number(data.list[0].main.humidity).toFixed(2);
+
+    document.getElementById("weather-icon").src = "https://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + ".png";
 
     for (var i = 0; i < 5; i++) {
         var n = (i * 8) + 1;
