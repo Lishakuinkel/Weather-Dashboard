@@ -30,7 +30,7 @@ function getCoordinates(search) {
     let lat;
     let lon;
 
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=" + apikey)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1&appid=" + apikey)
         .then(function (response) {
             console.log("success");
             return response.json();
