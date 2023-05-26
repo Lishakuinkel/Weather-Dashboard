@@ -1,6 +1,6 @@
 # Weather-Dashboard-App
 
-A simple, user interactive weather dashboard web application that displays current and future conditions for the input city using HTML, CSS, JS, Bootstrap and Third Party APIs - OpenWeather and Geocoding APIs. 
+A simple, user interactive weather dashboard web application that displays current and future weather conditions for the input city using HTML, CSS, JS, Bootstrap and Third Party APIs - OpenWeather and Geocoding APIs. 
 
 Live deployed url : https://lishakuinkel.github.io/Weather-Dashboard/
 
