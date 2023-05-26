@@ -61,6 +61,7 @@ function fetchWeather(lat, lon) {
 
 }
 
+//render items from api response data 
 function renderItems(data) {
 
     var temperature = data.list[0].main.temp;
@@ -74,11 +75,11 @@ function renderItems(data) {
     document.getElementById("weather-icon").src = "https://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + ".png";
 
     for (var i = 0; i < 5; i++) {
-        var n = (i * 8) + 1;
+        var n = (i * 8) + 1; //since the api response provides data for each 3 hours, came up with this formula for retrieving data for future dates instead
 
         var temperature = data.list[n].main.temp;
 
-        console.log("temp" + (i + 1));
+        //dynamically updating corresponding html elements with rendered api data
 
         document.getElementById("temp" + (i + 1)).innerHTML = Number(((temperature - 273.15) * 1.8) + 32).toFixed(2);
 
@@ -90,7 +91,7 @@ function renderItems(data) {
 
         document.getElementById("date" + (i + 1)).innerHTML = data.list[n].dt_txt.slice(0, 10);
     }
-    
+
 }
 
 function search_history() {
@@ -101,11 +102,12 @@ function search_history() {
         citySearches.push(cityInput.value);
     }
 
-    localStorage.setItem("citysearches", JSON.stringify(citySearches));
+    localStorage.setItem("citysearches", JSON.stringify(citySearches)); //setting up local storage to store the history
 
 
 }
 
+// grabbing the values from local storage and dynamically creating buttons for each search results
 function load_history() {
     citySearches = JSON.parse(localStorage.getItem("citysearches")) || [];
 
@@ -122,7 +124,7 @@ function load_history() {
     }
 }
 
-
+//checking whether search results are being clicked instead of search button
 function handleSearchbutton(e) {
     if (!e.target.matches('#historybtn')) {
         return;
@@ -132,7 +134,7 @@ function handleSearchbutton(e) {
     console.log(btn.innerHTML);
 
     cityName.textContent = btn.innerHTML;
-    getCoordinates(btn.innerHTML);
+    getCoordinates(btn.innerHTML); //if search history button is clicked then pass it's value to the function to display weather data accordingly
 }
 
 
