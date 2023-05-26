@@ -50,8 +50,12 @@ Following are some screenshots of the live working application:
 
  
 Resources used:
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
 https://getbootstrap.com/
+
 https://openweathermap.org/api
+
 
 
